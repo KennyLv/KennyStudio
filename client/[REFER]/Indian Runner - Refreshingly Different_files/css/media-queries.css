@@ -1,0 +1,98 @@
+
+@media only screen and (max-width:1199px) {
+
+#panel3 .tabbed-content .tab-list {margin:0 0 20px 0; font-size:0;}
+#panel3 .tabbed-content section p, #panel3 .tabbed-content #tasting-notes ul li p, #panel3 .tabbed-content #tasting-notes ul li h3 {padding:5px 10px; font-size:14px; line-height:18px;}
+#panel3 .tabbed-content section p {padding:0;}
+
+}
+
+@media only screen and (max-width:979px) {
+
+body {-webkit-text-size-adjust:100%;}
+.inner {max-width:720px;}
+
+#header .main-nav ul li {margin:0;}
+#header .main-nav ul li a {padding:0 10px;}
+
+#panel3 .tabbed-content section h2 {font-size:30px;}
+#panel5 h1 {font-size:32px;}
+#panel5 .contact-list li h2 {font-size:24px;}
+#panel5 .contact-list li a {font-size:16px;}
+
+}
+
+@media only screen and (max-width:749px) {
+
+#header .main-nav ul li a {font-size:18px;}
+
+#panel5 h2 {font-size:24px;}
+#panel5 p.intro {margin:0 0 20px 0; font-size:16px;}
+#panel5 .contact-list {margin:0 0 20px 0;}
+#panel5 .contact-list li, #panel5 .contact-list li:nth-child(2) {float:none; width:auto; margin:0 0 20px 0;}
+
+}
+
+@media only screen and (max-width:699px) {
+
+.inner {padding:0 10px;}
+
+#header {padding:0;}
+#header .toggle {float:right; display:block; width:32px; height:32px; margin:14px 10px 0 10px; text-indent:-9999px; background:url('../images/bg-mobile-nav-toggle.png') 0 0 no-repeat #1F4177;}
+
+#header .main-nav {float:none; clear:both; margin:0;}
+#header .main-nav ul {float:none; display:none; padding-top:50px;}
+#header .main-nav ul li {float:none; margin:0; padding:0; border-top:1px solid #CCC;}
+#header .main-nav ul li:first-child {border:none;}
+#header .main-nav ul li.buy a {padding-left:10px; background-position:75px 10px;}
+
+.panel {height:auto; padding:70px 0 0 0;}
+#panel1 {height:480px; padding:0;}
+#panel1 .logo-wrap {top:153px; width:300px; height:173px; margin-left:-150px;}
+#panel1 .logo-wrap .logo {display:block;}
+#panel2 {height:480px; padding:0;}
+#panel3 .tabbed-content {min-height:600px;}
+#panel3 .tabbed-content section h1 {font-size:32px;}
+#panel3 .tabbed-content section p {padding:0;}
+#panel3 .tabbed-content #tasting-notes ul, #panel3 .tabbed-content #tasting-notes ul li {padding:0; background:none;}
+#panel3 .tabbed-content #tasting-notes ul li h3, #panel3 .tabbed-content #tasting-notes ul li p {float:none; width:auto; padding:0;}
+#panel3 .tabbed-content #tasting-notes ul li p {margin:0 0 10px 0;}
+#panel3 .tabbed-content #tasting-notes .vr {display:none;}
+#panel4 {padding-top:0;}
+#panel4 .slides li {padding:50px 0;}
+#panel4 .slides li .inner {width:auto; height:auto; margin:0 15px; padding:20px 10px; border-radius:0;}
+#panel4 .slides li h1 {font-size:32px;}
+#panel4 .slides li h2 {font-size:30px;}
+#panel4 .slides li p {padding:0; font-size:16px; line-height:20px;}
+#panel4 .slides li .email {font-size:16px;}
+#panel4 .nav {bottom:15px;}
+#panel4 .controls .control {display:none !important;}
+#panel5 {padding-top:0;}
+#panel5 .inner {padding-top:70px;}
+
+}
+
+@media only screen and (max-width:649px) {
+
+#header #main-logo {left:10px; width:90px;}
+
+#panel1 .logo-wrap {width:200px; height:115px; margin-left:-100px;}
+#panel3 .tabbed-content .tab-list li {width:auto; margin:0 5px 0 0;}
+#panel3 .tabbed-content .tab-list li a {padding:0 10px;}
+#panel3 .tabbed-content section {width:100%;}
+#panel5 #contact-form {width:300px; margin-bottom:20px;}
+#panel5 #contact-form .text {float:none; width:auto;}
+
+}
+
+@media only screen and (max-width:599px) {
+
+#panel3 .tabbed-content {min-height:570px;}
+
+}
+
+@media only screen and (max-width: 349px) {
+
+#panel5 #contact-form {width:auto;}
+
+}

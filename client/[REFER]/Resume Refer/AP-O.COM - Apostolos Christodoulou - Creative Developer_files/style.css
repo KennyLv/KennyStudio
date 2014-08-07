@@ -1,0 +1,22 @@
+body{
+	background-color:#e5e5e5;
+	color:#333333;
+    font-size:18px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h1{
+	font-size:48px;
+	margin: 50px;
+}
+
+
+.main{
+    left: 50px;
+    position: absolute;
+    bottom: 50px;
+}
+
+a:link, a:visited{
+    color:#333333;
+}

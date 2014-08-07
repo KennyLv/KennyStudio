@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)http://www.ap-o.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+
+		<title>AP-O.COM - Apostolos Christodoulou - Creative Developer</title>
+
+		<meta name="author" content="ap-o.com">
+		<meta name="copyright" content="Copyright 2012. All Rights Reserved.">
+		<meta name="description" content="Work samples of Apostolos Christodoulou a freelance creative developer based in London, UK.">
+		<link rel="image_src" href="http://www.ap-o.com/img/apo.jpg">
+
+		<meta property="og:title" content="AP-O.COM - Design &amp; Code">
+		<meta property="og:description" content="Work of Apostolos Christodoulou a freelance creative developer, based in London, UK.">
+		<meta property="og:url" content="http://ap-o.com/">
+		<meta property="og:site_name" content="AP-O.COM">
+		<meta property="og:type" content="Creative Developer">
+		<meta property="og:image" content="img/apo.jpg">
+
+		<link rel="shortcut icon" href="http://www.ap-o.com/img/favicon.ico">
+		<link rel="apple-touch-icon" href="http://www.ap-o.com/img/apple-touch-icon.png">
+
+		<link rel="stylesheet" href="http://www.ap-o.com/css/lib/reset.css">
+		<link href="./AP-O.COM - Apostolos Christodoulou - Creative Developer_files/css" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="http://www.ap-o.com/css/style.css">
+
+	</head>
+
+	<body>
+
+		<h1 id="title">Get in touch for hxclnwficbpxhtdkq</h1>
+
+		<div class="main">
+			<p>Get in touch <a href="mailto:ac@ap-o.com">ac@ap-o.com</a></p>
+		</div>
+
+
+
+		<script src="./AP-O.COM - Apostolos Christodoulou - Creative Developer_files/jquery-1.7.1.min.js"></script>
+		<script src="./AP-O.COM - Apostolos Christodoulou - Creative Developer_files/RequestAnimationFrame.js"></script>
+		<script src="./AP-O.COM - Apostolos Christodoulou - Creative Developer_files/jquery.yugop.txeff.js"></script>
+
+		<script>
+		 $(document).ready(function(){
+
+			var labels = new Array(
+				"Hi, I 'm Apostolos.",
+				"I 'm a freelance creative developer.",
+				"Currently based in London, UK.",
+				"Sorry, my portfolio is on its way.",
+				"Get in touch for work samples.",
+				"Tune In. Die Happy.");
+
+			var currPos = 0;
+
+			playNextString();
+
+			function playNextString()
+			{
+				$("#title").yugopeffect(labels[currPos], Math.floor(labels[currPos].length*2.5));
+
+				currPos++;
+				if(currPos==labels.length){
+					currPos = 0;
+				}
+				setTimeout(playNextString, 3060);
+			}
+
+
+
+		});
+		</script>
+
+	
+
+</body></html>
