@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0156)http://assets.tumblr.com/assets/html/archive_iframe.html?_v=7c6c64b9b136fe852c4f2e6cb1486e10#src=http%3A%2F%2Fjournal.sumitpaul.com%2Farchive&name=sumitpaul -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-dns-prefetch-control" content="off">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="http://assets.tumblr.com/images/favicons/favicon.ico?1" type="image/gif">
+    <link rel="stylesheet" media="screen" href="http://assets.tumblr.com/assets/styles/archive.css?_v=f1f9625ec2729eeb95d7cd1c15ef2753">    <style type="text/css">
+        html, body {
+            background: transparent;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            opacity: 1;
+            -webkit-transition: opacity 0.2s linear;
+               -moz-transition: opacity 0.2s linear;
+                -ms-transition: opacity 0.2s linear;
+                 -o-transition: opacity 0.2s linear;
+                    transition: opacity 0.2s linear;
+        }
+        body.loading {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="version_bluebar">
+    <div id="iframe_controls" class="controls controls_bluebar">
+        <a href="https://www.tumblr.com/register/join_tumblr?referring_blog=sumitpaul" class="chrome" id="btn_join" target="_blank" title="Join Tumblr">
+            <span data-translation="join">Join</span> <span class="tumblr_logo"><span class="offscreen">Tumblr</span></span>
+        </a>
+        <a href="https://www.tumblr.com/register/follow/sumitpaul" class="chrome blue" id="btn_follow_join" target="_top" title="Follow">
+            <span class="icon icon_plus"></span><span data-translation="follow">Follow</span>
+        </a>
+    </div>
+    <script>
+        var Tumblr = Tumblr || {};
+        var jQuery = jQuery || null;
+    </script>
+    <script src="tumblelog_iframe.js"></script>
+    <script src="archive_iframe.js"></script>    <script>
+        Tumblr.Iframe.initialize('bluebar');
+        var parent_origin = decodeURIComponent(location.hash.slice(1).match(/src=[^&]+/)[0].substring(4));
+        _t.postMessage(['user_logged_in', _t.isLoggedIn() ? 'Yes' : 'No'], parent_origin, window.parent);
+    </script>
+
+
+</body></html>
