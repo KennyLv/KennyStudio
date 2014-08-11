@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   	<title>Kenny's Universe - </title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" href="favicon.ico">
+	<script type="text/javascript" src="./assets/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery.waypoints-2.0.5.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.main-nav li:first a').addClass('selected');
+			
+			var selectedPanelId = null;
+			//TODO : 如果最后一页到不了底边，则有bug
+			//TODO : 加滚动的动画效果
+			$('.panel').waypoint(function(direction) {
+				console.log(direction);
+				var panelID = $(this).attr('id');
+				//var panelID = (selectedPanelId != null )? selectedPanelId : $(this).attr('id') ;
+				//selectedPanelId = null;
+				//console.log('selectedPanelId' + selectedPanelId +"==" + "panelID" + panelID);
+				$('.main-nav a.selected').removeClass('selected');
+				$('.main-nav a[href="#' + panelID + '"]').addClass('selected');
+				if(panelID == "panel1"){
+					$("#header-wrap").fadeOut(600);//$("#header-wrap").hide(400);
+				}else{
+					$("#header-wrap").fadeIn(300);//$("#header-wrap").show(400);//
+				}
+			}, {offset:0});
+			
+			$('.main-nav li a').click(function(){
+				selectedPanelId = $(this).attr('href').split('#')[1];
+				$('#' + selectedPanelId).animate({scrollTop: 0}, 1000, "swing");
+				//return false;
+			});
+			
+		});
+	</script>
+	
+	<link rel="stylesheet" href="./assets/css/fontface.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<style type="text/css">
+		.tk-felt-tip-roman{
+			font-family:"felt-tip-roman",sans-serif;
+		}
+		.tk-museo-sans{
+			font-family:"museo-sans",sans-serif;
+		}
+		.tk-myriad-pro-condensed{
+			font-family:"myriad-pro-condensed",sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id="header-wrap" class="wrapper" style="display:none">
+		<header id="header" class="inner">
+			<a id="main-logo" href="">
+				<img src="./assets/images/LOGO2_1300_510.png" alt="Kenny's Universe - ">
+			</a>
+			<!--<a class="toggle" href="">Menu</a>
+			<ul class="social">
+				<li class="facebook"><a href="https://www.facebook.com/indianrunnerdrinks">Facebook</a></li>
+				<li class="twitter"><a href="https://twitter.com/irdrinks">Twitter</a></li>
+				<li class="linkedin"><a href="https://www.linkedin.com/company/the-indian-runner-drinks-company-limited">LinkedIn</a></li>
+			</ul>-->
+			<nav class="main-nav">
+				<ul>
+					<li><a href="#panel1" class="">Home</a></li>
+					<li><a href="#panel2" class="">Ha am I?</a></li>
+					<li><a href="#panel3" class="">Who am I?</a></li>
+					<li><a href="#panel4" class="">What do I do?</a></li>
+					<li><a href="#panel5" class="">Contact</a></li>
+					<!--<li><a href="" class="blog">Blogs</a></li>-->
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<div id="page-wrap" class="wrapper">
+			<div id="panel1" class="panel wrapper" style="height: 895px;background-color:yellow;">
+			Menu
+			</div>
+			<div id="panel2" class="panel wrapper" style="height: 895px;background-color:red;">
+			About Me
+			</div>
+			<div id="panel3" class="panel wrapper" style="height: 895px;background-color:blue;">
+			My Works
+			</div>
+			<div id="panel4" class="panel wrapper" style="height: 895px;background-color:green;">
+			Resume
+			</div>
+			<div id="panel5" class="panel wrapper" style="height: 895px;background-color:white;">
+			Contact
+			</div>	
+	</div>
+	<div id="footer"  style="height: 100px;background-color:black;">
+	Copyright
+	</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
