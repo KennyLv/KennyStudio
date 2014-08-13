@@ -27,18 +27,16 @@
 			}
 			#resume{
 				margin-top: 100px;
-				min-height:1000px;
 				background-color:white;
 				box-shadow:0 5px 25px rgba(0,0,0,0.5); 
 			}
-			#footer{
-				height:60px;
-			}
 			#name_area{
 				height:240px;
-				background-color:lightgreen;
-			}			
-			.name_area_left,.name_area_right{
+			}
+			#skill_area{
+				height:960px;
+			}
+			.name_area_left,.name_area_right, .skill_area_left,.skill_area_right{
 				float:left;
 				height:inherit;
 				font-family: corbel;
@@ -56,7 +54,6 @@
 				font-size:20px;
 				color: darkblue;
 			}
-			
 			.name_area_right{
 				width:36%;
 			}
@@ -66,10 +63,52 @@
 			.name_area_right table img{
 				width:40px;
 			}
-			#skill_area{
-				height:760px;
-				background-color:lightblue;
+			.skill_area_left{
+				width:60%;
 			}
+			.skill_area_right{
+				width:40%;
+				background:red;
+			}
+			
+			.timered_sections{
+				margin:0px 10px 0px 30px;
+			}
+			.plus_sections{
+			}
+			.sections_title{
+				border-bottom:1px solid  #000000;
+				padding:0px 0px 0px 50px;
+				background:url('./assets/images/bg-titleplus.png')  0px 0px no-repeat #FFF;
+				line-height:50px;
+			}
+			.sections_title p{
+				font-size:20px;
+				margin: inherit;
+			}
+			#sections_employment .employment_period{
+				height:300px;
+				margin:0px 10px 0px 24px;
+				border-left:1px solid  #000000;
+			} 
+			#sections_employment .pointer{
+				 margin: 20px 0px 0px -10px;
+			}
+			#sections_employment .timer{
+				position: relative;
+				margin: -30px 0px 0px 20px;
+			}
+			#sections_employment .title{
+			
+			}
+			#sections_employment .des{
+			
+			}
+			
+			#footer{
+				height:60px;
+			}
+			
 		</style>
 
 		<script type="text/javascript" src="./assets/js/jquery-1.11.1.min.js"></script>
@@ -96,6 +135,39 @@
 					"不积小流，无以成江海。",
 					"谋事在人，成事在天。",
 					"精诚所至，金石为开。"
+				];
+				var educationInfo={
+					"yearFrom": "2004", 
+					"yearTo":"2008",
+					"major":"Statistics",
+					"school":"School of Finance and Economics",
+					"university":"University of Jiangsu"
+				};
+				var employmentInfo=[
+					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]},
+					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]},
+					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]},
+					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]}
+				];
+				
+				var professionalSkills=[
+					{"skills": "Digital Marketing",     "proficiency":"6"},
+					{"skills": "Traditional Marketing", "proficiency":"3"},
+					{"skills": "Branding & Messaging",  "proficiency":"7"},
+					{"skills": "Research & Analytics",  "proficiency":"9"},
+					{"skills": "Written & Verbal Com",  "proficiency":"8"},
+					{"skills": "Technology",            "proficiency":"6"},
+					{"skills": "Photoshop & Design",    "proficiency":"7"},
+					{"skills": "Web Design/SEO",        "proficiency":"6"},
+					{"skills": "Presentation Skills",   "proficiency":"8"},
+					{"skills": "Project Management",    "proficiency":"9"},
+					{"skills": "Social Media",          "proficiency":"7"},
+					{"skills": "Microsoft Office",      "proficiency":"9"}
+				];
+				
+				var highlights = [
+					"",
+					""
 				];
 				
 			});
@@ -131,7 +203,55 @@
 					</div>
 				</div>
 				<div id="skill_area">
+					<div class="skill_area_left">
+					
+						<div class="timered_sections">
+							<div class="sections_title"><p>EMPLOYMENT</p></div>
+							<div id="sections_employment">
+								<div class="employment_period">
+									<img class="pointer" src="./assets/images/pointer.png"/>
+									<div class="timer">
+										<p>2011~2012</p>
+									</div>
+								</div>
+								
+								
+								<div class="employment_period">
+									<img class="pointer" src="./assets/images/pointer.png"/>
+									<div class="timer">
+										<p >2011~2012</p>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						
+						<div class="timered_sections">
+							<div class="sections_title"><p>EDUCATION</p></div>
+							<div id="sections_eduction">
+								
+							</div>
+						</div>
+						
+					</div>
+					<div class="skill_area_right">
+					
+						<div class="plus_sections">
+							<div class="sections_title"><p>PROFESSIONAL SKILLS</p></div>
+							<div id="sections_skills">
+								
+							</div>
+						</div>
+						
+						<div class="plus_sections">
+							<div class="sections_title"><p>PROFESSIONAL HIGHLIGHTS</p></div>
+							<div id="sections_highlights">
+								
+							</div>
+						</div>
+						
 				
+					</div>
 				</div>
 			</div>
 
