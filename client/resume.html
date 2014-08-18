@@ -23,7 +23,7 @@
 			}
 			#resume,#footer{
 				margin: 0 auto;
-				width:960px;
+				width:1024px;
 			}
 			#resume{
 				margin-top: 100px;
@@ -31,10 +31,10 @@
 				box-shadow:0 5px 25px rgba(0,0,0,0.5); 
 			}
 			#name_area{
-				height:240px;
+				min-height:240px;
 			}
 			#skill_area{
-				height:960px;
+				min-height:960px;
 			}
 			.name_area_left,.name_area_right, .skill_area_left,.skill_area_right{
 				float:left;
@@ -65,10 +65,11 @@
 			}
 			.skill_area_left{
 				width:60%;
+				padding-bottom:20px;
 			}
 			.skill_area_right{
 				width:40%;
-				background:red;
+				padding-bottom:20px;
 			}
 			
 			.timered_sections{
@@ -86,24 +87,67 @@
 				font-size:20px;
 				margin: inherit;
 			}
-			#sections_employment .employment_period{
-				height:300px;
+			
+			#sections_employment .employment_period, #sections_eduction .education_period{
 				margin:0px 10px 0px 24px;
 				border-left:1px solid  #000000;
 			} 
-			#sections_employment .pointer{
+			#sections_employment .pointer , #sections_eduction  .pointer{
 				 margin: 20px 0px 0px -10px;
 			}
+						
 			#sections_employment .timer{
-				position: relative;
-				margin: -30px 0px 0px 20px;
+				-webkit-transform-origin: left;
+				-webkit-transform: rotate(-90deg);
+				margin:60px 0px 0px -24px;
+				font-size:20px;
+				float:left;
+				width:0px;
 			}
-			#sections_employment .title{
 			
+			#sections_employment .title{
+				float: left;
+				margin:-26px 0px 0px 15px;
+				font-size: 20px;
+				font-weight:bold;
+			}
+			#sections_employment .title a{
+				color:darkblue;
+				cursor:pointer;
 			}
 			#sections_employment .des{
-			
+				margin:4px 0px 0px 17px;
+				font-size: 18px;
+				padding-bottom: 20px;
+				line-height: 24px;
 			}
+			
+			 #sections_eduction .timer{
+				height:60px;
+				float: left;
+				padding:0px 20px;
+				margin-top: -24px;
+				font-size: 18px;
+				font-weight: 700;
+				color: rgb(170, 163, 163);
+			 }
+			 #sections_eduction .des{
+				float: left;
+				font-size: 20px;
+				line-height: 10px;
+				margin-top: -40px;
+			 }
+			 #sections_eduction .major{
+				color: rgb(88, 88, 90);
+				font-weight: 700;
+			 }
+			 #sections_eduction .school{
+				color: rgb(170, 163, 163);
+				font-weight: 700;
+			 }
+			 #sections_eduction .university{
+				color: black;
+			 }
 			
 			#footer{
 				height:60px;
@@ -166,8 +210,15 @@
 				];
 				
 				var highlights = [
-					"",
-					""
+					"Experience creating the product positioning, messaging and branding necessary to capture a target markets attention and successfully go-to-market.",
+					"Experience creating sales and marketing collateral; white papers, data sheets, case studies, sales presentations, power points, brochures, trade-show materials, e-mail templates, webinars, and more.",
+					"Experience developing and executing wide range of digital strategies; web design, social media, e-mail, SEO, mobile, video, and more.",
+					"Worked closely with channel partners and trade organizations to develop channel partner strategies.",
+					"Developed and led numerous webinars and trade shows to create market demand and spur lead gen.",
+					"Proven ability to collaborate across departments to successfully bring products to market.",
+					"Agency career experience has proven I can work in complex, fast paced environments without sacrificing ability to multi-task and pay attention to detail.",
+					"Proven PM skills; from creating project plans to managing resources I’ve consistently met deadlines and business objectives on or under budget.",
+					"Passion for keeping up with emerging technology and the latest traditional/digital marketing trends."
 				];
 				
 			});
@@ -208,20 +259,60 @@
 						<div class="timered_sections">
 							<div class="sections_title"><p>EMPLOYMENT</p></div>
 							<div id="sections_employment">
+							
 								<div class="employment_period">
 									<img class="pointer" src="./assets/images/pointer.png"/>
-									<div class="timer">
-										<p>2011~2012</p>
+									<div>
+										<div class="timer">
+											<p>8888.8~9999.9</p>
+										</div>
+										<div class="title">
+											<a>Infoition </a><span >Product Marketing Manager</span>
+										</div>
+										<div class="des"><span>
+Developed and led the product launch of a new federal social media service that resulted in a 7% increase in revenue four months after launch. I was directly responsible for the go-to-market planning, strategy and execution which required constant internal presentations to c-suite leadership. Planning and development included market research, competitor analysis, pricing strategies, messaging, product positioning and more. Founded on months of market research and  intelligence, I developed the marketing collateral necessary to bring the product to market; brochures, sales presentations, channel partner material, e-mail campaigns and more.</span>
+										</div>
+									</div>
+								</div>
+															
+								<div class="employment_period">
+									<img class="pointer" src="./assets/images/pointer.png"/>
+									<div>
+										<div class="timer">
+											<p>8888.8~9999.9</p>
+										</div>
+										<div class="title">
+											<a>Infoition </a><span >Product Marketing Manager</span>
+										</div>
+										<div class="des"><span>
+Developed and led the product launch of a new federal social media service that resulted in a 7% increase in revenue four months after launch. I was directly responsible for the go-to-market planning, strategy and execution which required constant internal presentations to c-suite leadership. Planning and development included market research, competitor analysis, pricing strategies, messaging, product positioning and more. Founded on months of market research and  intelligence, I developed the marketing collateral necessary to bring the product to market; brochures, sales presentations, channel partner material, e-mail campaigns and more.</span>
+										</div>
 									</div>
 								</div>
 								
 								
+								
+															
 								<div class="employment_period">
 									<img class="pointer" src="./assets/images/pointer.png"/>
-									<div class="timer">
-										<p >2011~2012</p>
+									<div>
+										<div class="timer">
+											<p>8888.8~9999.9</p>
+										</div>
+										<div class="title">
+											<a>Infoition </a><span >Product Marketing Manager</span>
+										</div>
+										<div class="des"><span>
+Developed and led the product launch of a new federal social media service that resulted in a 7% increase in revenue four months after launch. I was directly responsible for the go-to-market planning, strategy and execution which required constant internal presentations to c-suite leadership. Planning and development included market research, competitor analysis, pricing strategies, messaging, product positioning and more. Founded on months of market research and  intelligence, I developed the marketing collateral necessary to bring the product to market; brochures, sales presentations, channel partner material, e-mail campaigns and more.</span>
+										</div>
 									</div>
 								</div>
+								
+								
+								
+								
+								
+								
 								
 							</div>
 						</div>
@@ -229,29 +320,77 @@
 						<div class="timered_sections">
 							<div class="sections_title"><p>EDUCATION</p></div>
 							<div id="sections_eduction">
+							
+							
+								<div class="education_period">
+										<img class="pointer" src="./assets/images/pointer.png"/>
+										<div>
+											<div class="timer">2004 - 2008 </div>
+											<div class="des">
+												<p class="major">Marketing & Advertising - B.A.</p>
+												<p class="school">School of Communications</p>
+												<p class="university">University of Central Florida</p>
+											</div>
+											<div style="clear:both;"> </div>
+										</div>
+								</div>
+							
+							
+								<div class="education_period">
+										<img class="pointer" src="./assets/images/pointer.png"/>
+										<div>
+											<div class="timer">2004 - 2008 </div>
+											<div class="des">
+												<p class="major">Marketing & Advertising - B.A.</p>
+												<p class="school">School of Communications</p>
+												<p class="university">University of Central Florida</p>
+											</div>
+											<div style="clear:both;"> </div>
+										</div>
+								</div>
+							
+							
 								
 							</div>
 						</div>
-						
 					</div>
 					<div class="skill_area_right">
 					
 						<div class="plus_sections">
 							<div class="sections_title"><p>PROFESSIONAL SKILLS</p></div>
 							<div id="sections_skills">
-								
+								<table>
+									<tbody id="skills_table">
+										<th><td></td><td> average | good | skilled </td></th>
+										
+										<tr><td>Digital Marketing</td>         <td></td></tr>
+										<tr><td>Traditional Marketing</td> <td></td></tr>
+										<tr><td>Research & Analytics</td>  <td></td></tr>
+										<tr><td>Project Management</td>  <td></td></tr>
+										<tr><td>Microsoft Office</td>          <td></td></tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 						
 						<div class="plus_sections">
 							<div class="sections_title"><p>PROFESSIONAL HIGHLIGHTS</p></div>
 							<div id="sections_highlights">
-								
+								<ul>
+									<li>Experience developing and executing wide range of digital strategies; web design, social media, e-mail, SEO, mobile, video, and more.</li>
+									<li>Worked closely with channel partners and trade organizations to develop channel partner strategies.</li>
+									<li>Developed and led numerous webinars and trade shows to create market demand and spur lead gen.</li>
+									<li>Proven ability to collaborate across departments to successfully bring products to market.</li>
+									<li>Agency career experience has proven I can work in complex, fast paced environments without sacrificing ability to multi-task and pay attention to detail.</li>
+									<li>Proven PM skills; from creating project plans to managing resources I’ve consistently met deadlines and business objectives on or under budget.</li>
+									<li>Passion for keeping up with emerging technology and the latest traditional/digital marketing trends."</li>
+								</ul>
 							</div>
 						</div>
 						
 				
 					</div>
+					<div style="clear:both;"> </div>
 				</div>
 			</div>
 
