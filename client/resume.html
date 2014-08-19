@@ -12,152 +12,47 @@
 		<title>Kenny's Resume</title>
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="stylesheet" href="./assets/css/style.css">
-		<style type="text/css">
-			#quotes{
-				background:red; 
-				margin: 10px 0 0 180px;
-				padding: 5px 0;
-				width:700px;
-				height:40px;
-				float: left;
-			}
-			#resume,#footer{
-				margin: 0 auto;
-				width:1024px;
-			}
-			#resume{
-				margin-top: 100px;
-				background-color:white;
-				box-shadow:0 5px 25px rgba(0,0,0,0.5); 
-			}
-			#name_area{
-				min-height:240px;
-			}
-			#skill_area{
-				min-height:960px;
-			}
-			.name_area_left,.name_area_right, .skill_area_left,.skill_area_right{
-				float:left;
-				height:inherit;
-				font-family: corbel;
-			}
-			.name_area_left{
-				width:64%;
-			}
-			.name_area_left .name_card{
-				padding:0px 0px 0px 80px;
-				font-size:60px;
-				font-family: fantasy;
-			}			
-			.name_area_left .name_des{
-				padding:0px 0px 0px 80px;
-				font-size:20px;
-				color: darkblue;
-			}
-			.name_area_right{
-				width:36%;
-			}
-			.name_area_right table{
-				margin:40px;
-			}
-			.name_area_right table img{
-				width:40px;
-			}
-			.skill_area_left{
-				width:60%;
-				padding-bottom:20px;
-			}
-			.skill_area_right{
-				width:40%;
-				padding-bottom:20px;
-			}
-			
-			.timered_sections{
-				margin:0px 10px 0px 30px;
-			}
-			.plus_sections{
-			}
-			.sections_title{
-				border-bottom:1px solid  #000000;
-				padding:0px 0px 0px 50px;
-				background:url('./assets/images/bg-titleplus.png')  0px 0px no-repeat #FFF;
-				line-height:50px;
-			}
-			.sections_title p{
-				font-size:20px;
-				margin: inherit;
-			}
-			
-			#sections_employment .employment_period, #sections_eduction .education_period{
-				margin:0px 10px 0px 24px;
-				border-left:1px solid  #000000;
-			} 
-			#sections_employment .pointer , #sections_eduction  .pointer{
-				 margin: 20px 0px 0px -10px;
-			}
-						
-			#sections_employment .timer{
-				-webkit-transform-origin: left;
-				-webkit-transform: rotate(-90deg);
-				margin:60px 0px 0px -24px;
-				font-size:20px;
-				float:left;
-				width:0px;
-			}
-			
-			#sections_employment .title{
-				float: left;
-				margin:-26px 0px 0px 15px;
-				font-size: 20px;
-				font-weight:bold;
-			}
-			#sections_employment .title a{
-				color:darkblue;
-				cursor:pointer;
-			}
-			#sections_employment .des{
-				margin:4px 0px 0px 17px;
-				font-size: 18px;
-				padding-bottom: 20px;
-				line-height: 24px;
-			}
-			
-			 #sections_eduction .timer{
-				height:60px;
-				float: left;
-				padding:0px 20px;
-				margin-top: -24px;
-				font-size: 18px;
-				font-weight: 700;
-				color: rgb(170, 163, 163);
-			 }
-			 #sections_eduction .des{
-				float: left;
-				font-size: 20px;
-				line-height: 10px;
-				margin-top: -40px;
-			 }
-			 #sections_eduction .major{
-				color: rgb(88, 88, 90);
-				font-weight: 700;
-			 }
-			 #sections_eduction .school{
-				color: rgb(170, 163, 163);
-				font-weight: 700;
-			 }
-			 #sections_eduction .university{
-				color: black;
-			 }
-			
-			#footer{
-				height:60px;
-			}
-			
-		</style>
+		<link rel="stylesheet" href="./assets/css/resume.css">
 
-		<script type="text/javascript" src="./assets/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jQuery/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.plugin.from_html.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.plugin.standard_fonts_metrics.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.plugin.split_text_to_size.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.plugin.cell.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.plugin.addimage.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.plugin.png_support.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/png_support/png.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-jsPdf/png_support/zlib.js"></script>
+		<script type="text/javascript" src="./assets/js/3rd-FileSaverJs/FileSaver.js"></script>
+		
+		
+		<!--
+		<script type="text/javascript" src="./assets/js/jspdf.plugin.png_support.js"></script>
+		<script type="text/javascript" src="./assets/js/jspdf.plugin.split_text_to_size.js"></script>
+		<script type="text/javascript" src="./assets/js/jspdf.plugin.split_text_to_size.js"></script>
+		-->
+		
+		
+		
+		
 		<script type="text/javascript" >
 			$(document).ready(function() {
+			
+			
+				$("#download_resume").click(function(){
+					var pdfdoc = new jsPDF();
+					// All units are in the set measurement for the document
+					// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+					pdfdoc.fromHTML($('#resume').get(0), 15, 15, {
+						'width': 1024
+					});
+					setTimeout(function(){
+						pdfdoc.save("Kennys_Resume.pdf");
+					},20000);
+				});
+				
+				
 				var quotes_en=[
 					"A good beginning is half done.",
 					"A bird in the hand is worth than two in the bush.",
@@ -221,6 +116,8 @@
 					"Passion for keeping up with emerging technology and the latest traditional/digital marketing trends."
 				];
 				
+				
+				
 			});
 		</script>
 	</head>
@@ -231,12 +128,11 @@
 					<a id="main-logo" href="index.html">
 						<img src="./assets/images/LOGO2_1300_510.png" alt="Kenny's Universe - ">
 					</a>
-					<div id="quotes">
-					</div>
+					<div id="quotes">十五向學,三十而立,四十而不惑,五十而知天命,六十而耳順,七十而從心欲，不踰矩.</div>
 				</header>
 			</div>
 			
-			<div id="resume">
+			<section id="resume">
 				<div id="name_area">
 					<div class="name_area_left">
 						<p class="name_card">Kenny   Lv</p>
@@ -348,8 +244,6 @@ Developed and led the product launch of a new federal social media service that 
 											<div style="clear:both;"> </div>
 										</div>
 								</div>
-							
-							
 								
 							</div>
 						</div>
@@ -359,23 +253,25 @@ Developed and led the product launch of a new federal social media service that 
 						<div class="plus_sections">
 							<div class="sections_title"><p>PROFESSIONAL SKILLS</p></div>
 							<div id="sections_skills">
-								<table>
-									<tbody id="skills_table">
-										<th><td></td><td> average | good | skilled </td></th>
-										
-										<tr><td>Digital Marketing</td>         <td></td></tr>
-										<tr><td>Traditional Marketing</td> <td></td></tr>
-										<tr><td>Research & Analytics</td>  <td></td></tr>
-										<tr><td>Project Management</td>  <td></td></tr>
-										<tr><td>Microsoft Office</td>          <td></td></tr>
+							
+								<table id="skills_table">
+									<thead><th></th><th> Average</th><th> Good</th><th> Skilled </th></thead>
+									<tbody>
+										<tr><th>Digital Marketing</th>         <td colspan="3">    <div class="skills_star" style="width:120px;"></div>    </td></tr>
+										<tr><th>Traditional Marketing</th> <td colspan="3">     <div class="skills_star" style="width:140px;"></div>     </td></tr>
+										<tr><th>Research & Analytics</th>  <td colspan="3">     <div class="skills_star" style="width:160px;"></div>     </td></tr>
+										<tr><th>Project Management</th>  <td colspan="3">     <div class="skills_star" style="width:180px;"></div>     </td></tr>
+										<tr><th>Microsoft Office</th>          <td colspan="3">      <div class="skills_star" style="width:120px;"></div>     </td></tr>
 									</tbody>
 								</table>
+								
 							</div>
 						</div>
 						
 						<div class="plus_sections">
 							<div class="sections_title"><p>PROFESSIONAL HIGHLIGHTS</p></div>
 							<div id="sections_highlights">
+							
 								<ul>
 									<li>Experience developing and executing wide range of digital strategies; web design, social media, e-mail, SEO, mobile, video, and more.</li>
 									<li>Worked closely with channel partners and trade organizations to develop channel partner strategies.</li>
@@ -392,10 +288,11 @@ Developed and led the product launch of a new federal social media service that 
 					</div>
 					<div style="clear:both;"> </div>
 				</div>
-			</div>
+			</section>
 
 			<div id="footer">
 				Copyright © 2011 Kenny Lv
+				<div id="download_resume">Download</div>
 			</div>
 
 		</div>

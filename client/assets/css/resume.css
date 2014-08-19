@@ -1,0 +1,192 @@
+body{
+	font-family: corbel;
+}
+#quotes{
+	margin: 10px 0 0 190px;
+	width:700px;
+	height:40px;
+	float: left;
+	font-size: 14px;
+	text-align: left;
+	padding-top: 20px;
+}
+#resume,#footer{
+	margin: 0 auto;
+	width:1024px;
+}
+#resume{
+	margin-top: 100px;
+	background-color:white;
+	box-shadow:0 5px 25px rgba(0,0,0,0.5); 
+}
+#name_area{
+	min-height:240px;
+}
+#skill_area{
+	min-height:960px;
+}
+.name_area_left,.name_area_right, .skill_area_left,.skill_area_right{
+	float:left;
+	height:inherit;
+	font-family: corbel;
+}
+.name_area_left{
+	width:64%;
+}
+.name_area_left .name_card{
+	padding:0px 0px 0px 80px;
+	font-size:60px;
+	font-family: fantasy;
+}			
+.name_area_left .name_des{
+	padding:0px 0px 0px 80px;
+	font-size:20px;
+	color: darkblue;
+}
+.name_area_right{
+	width:36%;
+}
+.name_area_right table{
+	margin:40px;
+}
+.name_area_right table img{
+	width:40px;
+}
+.skill_area_left{
+	width:60%;
+	padding-bottom:20px;
+}
+.skill_area_right{
+	width:40%;
+	padding-bottom:20px;
+}
+
+.timered_sections{
+	margin:0px 10px 0px 30px;
+}
+.plus_sections{
+}
+.sections_title{
+	border-bottom:1px solid  #000000;
+	padding:0px 0px 0px 50px;
+	background:url('../images/bg-titleplus.png')  0px 0px no-repeat #FFF;
+	line-height:50px;
+}
+.sections_title p{
+	font-size:20px;
+	margin: inherit;
+}
+
+#sections_employment .employment_period, #sections_eduction .education_period{
+	margin:0px 10px 0px 24px;
+	border-left:1px solid  #000000;
+} 
+#sections_employment .pointer , #sections_eduction  .pointer{
+	 margin: 20px 0px 0px -10px;
+}
+			
+#sections_employment .timer{
+	-webkit-transform-origin: left;
+	-webkit-transform: rotate(-90deg);
+	margin:60px 0px 0px -24px;
+	font-size:20px;
+	float:left;
+	width:0px;
+}
+
+#sections_employment .title{
+	float: left;
+	margin:-26px 0px 0px 15px;
+	font-size: 20px;
+	font-weight:bold;
+}
+#sections_employment .title a{
+	color:darkblue;
+	cursor:pointer;
+}
+#sections_employment .des{
+	margin:4px 0px 0px 17px;
+	font-size: 18px;
+	padding-bottom: 20px;
+	line-height: 24px;
+}
+
+ #sections_eduction .timer{
+	height:60px;
+	float: left;
+	padding:0px 20px;
+	margin-top: -24px;
+	font-size: 18px;
+	font-weight: 700;
+	color: rgb(170, 163, 163);
+ }
+ #sections_eduction .des{
+	float: left;
+	font-size: 20px;
+	line-height: 10px;
+	margin-top: -40px;
+ }
+ #sections_eduction .major{
+	color: rgb(88, 88, 90);
+	font-weight: 700;
+ }
+ #sections_eduction .school{
+	color: rgb(170, 163, 163);
+	font-weight: 700;
+ }
+ #sections_eduction .university{
+	color: black;
+ }
+ 
+#skills_table{
+	font-size:18px;
+	margin:20px 10px;
+}
+#skills_table thead th{
+	font-size:16px;
+	text-align:center;
+	font-style: italic;
+}
+#skills_table tbody th{
+	font-size:18px;
+	font-weight:normal;
+	line-height:30px;
+	text-align:left;
+}
+#skills_table td{
+	width:200px;
+	background:url('../images/proficiency_gray.png') 0px 0px repeat-X #FFF;
+}
+#skills_table .skills_star{
+	height:30px;
+	background:url('../images/proficiency.png') 0px 0px repeat-X #FFF;
+}
+
+ul{
+	margin-right:20px;
+	font-size:18px;
+	list-style-image:url('../images/ul1.png') ;
+	list-style-type:circle;
+}
+li{
+	margin-top:20px;
+	line-height:22px;
+}
+
+#footer{
+	height:60px;
+	padding-top:20px;
+}
+
+#download_resume{
+	width:200px;
+	height:50px;
+	background:darkblue;
+	color:yellow;
+	text-align:center;
+	font-size:20px;
+	cursor: pointer;
+}
+
+
+
