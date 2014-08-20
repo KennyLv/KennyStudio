@@ -89,7 +89,7 @@ body{
 	-webkit-transform-origin: left;
 	-webkit-transform: rotate(-90deg);
 	margin:60px 0px 0px -24px;
-	font-size:20px;
+	font-size:18px;
 	float:left;
 	width:0px;
 }
@@ -181,12 +181,30 @@ li{
 #download_resume{
 	width:200px;
 	height:50px;
-	background:darkblue;
 	color:yellow;
 	text-align:center;
 	font-size:20px;
 	cursor: pointer;
+	
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	padding: 0 60px;
+	outline: none;
+	border: none;
+	background: #1d9650;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	line-height: 4px;
+	
 }
 
-
+#download_progressbar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 20%;
+	background: yellow;
+	opacity:0.5;
+}
 

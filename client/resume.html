@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="./assets/css/resume.css">
 
 		<script type="text/javascript" src="./assets/js/3rd-jQuery/jquery-1.11.1.min.js"></script>
+		
 		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.js"></script>
 		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.plugin.from_html.js"></script>
 		<script type="text/javascript" src="./assets/js/3rd-jsPdf/jspdf.plugin.standard_fonts_metrics.js"></script>
@@ -26,7 +27,7 @@
 		<script type="text/javascript" src="./assets/js/3rd-jsPdf/png_support/zlib.js"></script>
 		<script type="text/javascript" src="./assets/js/3rd-FileSaverJs/FileSaver.js"></script>
 		
-		
+		<script type="text/javascript" src="./assets/js/3rd-jsMVC/agility.min.js"></script>
 		<!--
 		<script type="text/javascript" src="./assets/js/jspdf.plugin.png_support.js"></script>
 		<script type="text/javascript" src="./assets/js/jspdf.plugin.split_text_to_size.js"></script>
@@ -34,24 +35,28 @@
 		-->
 		
 		
-		
-		
 		<script type="text/javascript" >
-			$(document).ready(function() {
-			
-			
-				$("#download_resume").click(function(){
-					var pdfdoc = new jsPDF();
-					// All units are in the set measurement for the document
-					// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
-					pdfdoc.fromHTML($('#resume').get(0), 15, 15, {
-						'width': 1024
-					});
-					setTimeout(function(){
-						pdfdoc.save("Kennys_Resume.pdf");
-					},20000);
+		
+			$("#download_resume").click(function(){
+				var pdfdoc = new jsPDF();
+				// All units are in the set measurement for the document
+				// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+				pdfdoc.fromHTML($('#resume').get(0), 15, 15, {
+					'width': 1024
 				});
 				
+				var progress = 0;
+				var interval = setInterval( function() {
+					progress = Math.min( progress + Math.random() * 0.1, 1 );
+					$("#download_progressbar").css("width", progress*100+"%");
+					if( progress === 1 ) {
+						pdfdoc.save("Kennys_Resume.pdf");
+						clearInterval( interval );
+					}
+				}, 2000 );
+			});
+			
+			$(document).ready(function() {
 				
 				var quotes_en=[
 					"A good beginning is half done.",
@@ -75,21 +80,67 @@
 					"谋事在人，成事在天。",
 					"精诚所至，金石为开。"
 				];
-				var educationInfo={
-					"yearFrom": "2004", 
-					"yearTo":"2008",
-					"major":"Statistics",
-					"school":"School of Finance and Economics",
-					"university":"University of Jiangsu"
-				};
-				var employmentInfo=[
-					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]},
-					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]},
+				
+				var employmentInfo_model=[
+					{"yearFrom": "2001.8~2009.9", "yearTo":"8888.8~9999.9","companyName":"Infoition","jobTitle":"Product Marketing Manager","description":"Planning and development included market research, competitor analysis, pricing strategies, messaging, prod"},
+					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["1","2","3","4"]},
 					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]},
 					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]}
 				];
 				
-				var professionalSkills=[
+				var employmentInfo_view = $$({}, 
+						'<div class="employment_period">'
+					+ '<img class="pointer" src="./assets/images/pointer.png"/>'
+					+ '<div>'
+					+ '<div class="timer">'
+					+ '<p data-bind="yearFrom"></p>'
+					+ '</div>'
+					+ '<div class="title">'
+					+ '<a data-bind="companyName"> </a><span data-bind="jobTitle"></span>'
+					+ '</div>'
+					+ '<div class="des"><span data-bind="description"></span>'
+					+ '</div>'
+					+ '</div>'
+					+ '</div>'
+				);
+				for(var index=0;index<employmentInfo_model.length;index++){
+					var employmentInfo_html = $$(employmentInfo_view, employmentInfo_model[index]);
+					$("#sections_employment").append(employmentInfo_html.view.$root);
+				}
+				
+				var educationInfo_model=[	{
+					"yearFrom": "2004-2008", 
+					"yearTo":"2008",
+					"major":"Statistics",
+					"school":"School of Finance and Economics",
+					"university":"University of Jiangsu"
+				},
+				{
+					"yearFrom": "2008-2010", 
+					"yearTo":"2010",
+					"major":"Marketing & Advertising - B.A.",
+					"school":"School of Communications",
+					"university":"University of Central Florida"
+				}];
+				
+				var educationInfo_view =  $$({}, 
+					'<div class="education_period">'
+					+'<img class="pointer" src="./assets/images/pointer.png"/>'
+					+'<div>'
+					+'<div class="timer" data-bind="yearFrom"></div>'
+					+'<div class="des">'
+					+'<p class="major" data-bind="major">Marketing & Advertising - B.A.</p>'
+					+'<p class="school" data-bind="school">School of Communications</p>'
+					+'<p class="university" data-bind="university">University of Central Florida</p>'
+					+'</div>'
+					+'<div style="clear:both;"> </div>'
+					+'</div>'
+					+'</div>'
+				);
+				var educationInfo_html = $$(educationInfo_view, educationInfo_model[1]);
+				$("#sections_eduction").append(educationInfo_html.view.$root);
+				
+				var professionalSkills_model=[
 					{"skills": "Digital Marketing",     "proficiency":"6"},
 					{"skills": "Traditional Marketing", "proficiency":"3"},
 					{"skills": "Branding & Messaging",  "proficiency":"7"},
@@ -104,7 +155,26 @@
 					{"skills": "Microsoft Office",      "proficiency":"9"}
 				];
 				
-				var highlights = [
+				//var professionalSkills_view =  $$({}, '');
+				
+				for(var index=0;index<professionalSkills_model.length;index++){
+						var professionalSkills_html = $$({
+						  model: professionalSkills_model[index],
+						  view: {
+								format: '<tr><th data-bind="skills"></th><td colspan="3"><div class="skills_star"></div></td></tr>'
+						  },
+						  controller: {
+									'create': function(){
+									  var self = this;
+									  self.view.$('.skills_star').css('width',parseInt(self.model._initData.proficiency) *20 + "px");
+									}
+						  }
+						});
+					//var professionalSkills_html = $$(professionalSkills_view, professionalSkills_model[index]);
+					$("#skills_score").append(professionalSkills_html.view.$root);
+				}
+				
+				var highlights_model = [
 					"Experience creating the product positioning, messaging and branding necessary to capture a target markets attention and successfully go-to-market.",
 					"Experience creating sales and marketing collateral; white papers, data sheets, case studies, sales presentations, power points, brochures, trade-show materials, e-mail templates, webinars, and more.",
 					"Experience developing and executing wide range of digital strategies; web design, social media, e-mail, SEO, mobile, video, and more.",
@@ -115,8 +185,13 @@
 					"Proven PM skills; from creating project plans to managing resources I’ve consistently met deadlines and business objectives on or under budget.",
 					"Passion for keeping up with emerging technology and the latest traditional/digital marketing trends."
 				];
+
 				
-				
+				var item_view = $$({}, '<li data-bind="item"></li>');
+				for(var index=0; index<highlights_model.length;index++){
+					var newItem = $$(item_view, {item : highlights_model[index]});
+					$("#sections_highlights ul").append(newItem.view.$root);
+				}
 				
 			});
 		</script>
@@ -156,6 +231,7 @@
 							<div class="sections_title"><p>EMPLOYMENT</p></div>
 							<div id="sections_employment">
 							
+								<!--
 								<div class="employment_period">
 									<img class="pointer" src="./assets/images/pointer.png"/>
 									<div>
@@ -185,29 +261,7 @@ Developed and led the product launch of a new federal social media service that 
 										</div>
 									</div>
 								</div>
-								
-								
-								
-															
-								<div class="employment_period">
-									<img class="pointer" src="./assets/images/pointer.png"/>
-									<div>
-										<div class="timer">
-											<p>8888.8~9999.9</p>
-										</div>
-										<div class="title">
-											<a>Infoition </a><span >Product Marketing Manager</span>
-										</div>
-										<div class="des"><span>
-Developed and led the product launch of a new federal social media service that resulted in a 7% increase in revenue four months after launch. I was directly responsible for the go-to-market planning, strategy and execution which required constant internal presentations to c-suite leadership. Planning and development included market research, competitor analysis, pricing strategies, messaging, product positioning and more. Founded on months of market research and  intelligence, I developed the marketing collateral necessary to bring the product to market; brochures, sales presentations, channel partner material, e-mail campaigns and more.</span>
-										</div>
-									</div>
-								</div>
-								
-								
-								
-								
-								
+								-->
 								
 								
 							</div>
@@ -217,7 +271,7 @@ Developed and led the product launch of a new federal social media service that 
 							<div class="sections_title"><p>EDUCATION</p></div>
 							<div id="sections_eduction">
 							
-							
+							<!--
 								<div class="education_period">
 										<img class="pointer" src="./assets/images/pointer.png"/>
 										<div>
@@ -243,7 +297,7 @@ Developed and led the product launch of a new federal social media service that 
 											</div>
 											<div style="clear:both;"> </div>
 										</div>
-								</div>
+								</div>-->
 								
 							</div>
 						</div>
@@ -254,16 +308,16 @@ Developed and led the product launch of a new federal social media service that 
 							<div class="sections_title"><p>PROFESSIONAL SKILLS</p></div>
 							<div id="sections_skills">
 							
-								<table id="skills_table">
+								<!--<table id="skills_table">
 									<thead><th></th><th> Average</th><th> Good</th><th> Skilled </th></thead>
-									<tbody>
+									<tbody id="skills_score">
 										<tr><th>Digital Marketing</th>         <td colspan="3">    <div class="skills_star" style="width:120px;"></div>    </td></tr>
 										<tr><th>Traditional Marketing</th> <td colspan="3">     <div class="skills_star" style="width:140px;"></div>     </td></tr>
 										<tr><th>Research & Analytics</th>  <td colspan="3">     <div class="skills_star" style="width:160px;"></div>     </td></tr>
 										<tr><th>Project Management</th>  <td colspan="3">     <div class="skills_star" style="width:180px;"></div>     </td></tr>
 										<tr><th>Microsoft Office</th>          <td colspan="3">      <div class="skills_star" style="width:120px;"></div>     </td></tr>
 									</tbody>
-								</table>
+								</table>-->
 								
 							</div>
 						</div>
@@ -273,6 +327,7 @@ Developed and led the product launch of a new federal social media service that 
 							<div id="sections_highlights">
 							
 								<ul>
+									<!--
 									<li>Experience developing and executing wide range of digital strategies; web design, social media, e-mail, SEO, mobile, video, and more.</li>
 									<li>Worked closely with channel partners and trade organizations to develop channel partner strategies.</li>
 									<li>Developed and led numerous webinars and trade shows to create market demand and spur lead gen.</li>
@@ -280,6 +335,7 @@ Developed and led the product launch of a new federal social media service that 
 									<li>Agency career experience has proven I can work in complex, fast paced environments without sacrificing ability to multi-task and pay attention to detail.</li>
 									<li>Proven PM skills; from creating project plans to managing resources I’ve consistently met deadlines and business objectives on or under budget.</li>
 									<li>Passion for keeping up with emerging technology and the latest traditional/digital marketing trends."</li>
+									-->
 								</ul>
 							</div>
 						</div>
@@ -292,7 +348,7 @@ Developed and led the product launch of a new federal social media service that 
 
 			<div id="footer">
 				Copyright © 2011 Kenny Lv
-				<div id="download_resume">Download</div>
+				<button  id="download_resume" >Download	<span id="download_progressbar"></span>	</button>
 			</div>
 
 		</div>
