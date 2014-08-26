@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Walter Turncoat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Walter Turncoat'), local('WalterTurncoat'), url(http://fonts.gstatic.com/s/walterturncoat/v5/sG9su5g4GXy1KP73cU3hvbescDKuDVIm01MBkTErNGM.woff2) format('woff2'), url(http://fonts.gstatic.com/s/walterturncoat/v5/sG9su5g4GXy1KP73cU3hvf-Xg5uhy57aq-Akr_1zBcg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v8/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2'), url(http://fonts.gstatic.com/s/raleway/v8/IczWvq5y_Cwwv_rBjOtT0w.woff) format('woff');
+}
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url(http://fonts.gstatic.com/s/indieflower/v6/10JVD_humAd5zP2yrFqw6ugdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/indieflower/v6/10JVD_humAd5zP2yrFqw6nhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(http://fonts.gstatic.com/s/nunito/v6/1TiHc9yag0wq3lDO9cw0vltXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/nunito/v6/1TiHc9yag0wq3lDO9cw0vj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(http://fonts.gstatic.com/s/nunito/v6/cSNs3NwpEgPVRQzvkh3NeQ.woff2) format('woff2'), url(http://fonts.gstatic.com/s/nunito/v6/0rdItLTcOd8TSMl72RUU5w.woff) format('woff');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(http://fonts.gstatic.com/s/nunito/v6/TttUCfJ272GBgSKaOaD7KltXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/nunito/v6/TttUCfJ272GBgSKaOaD7Kj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.gstatic.com/s/sourcesanspro/v8/ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v8/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(http://fonts.gstatic.com/s/sourcesanspro/v8/toadOcfmlt9b38dHJxOBGCOFnW3Jk0f09zW_Yln67Ac.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v8/toadOcfmlt9b38dHJxOBGJ6-ys_j0H4QL65VLqzI3wI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://fonts.gstatic.com/s/sourcesanspro/v8/toadOcfmlt9b38dHJxOBGEo0As1BFRXtCDhS66znb_k.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v8/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(http://fonts.gstatic.com/s/lato/v8/EsvMC5un3kjyUhB9ZEPPwg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/lato/v8/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v8/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/lato/v8/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(http://fonts.gstatic.com/s/lato/v8/H2DMvhDLycM56KNuAtbJYA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/lato/v8/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+}

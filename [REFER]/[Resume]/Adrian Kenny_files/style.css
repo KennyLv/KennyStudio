@@ -1,0 +1,388 @@
+@font-face {
+	font-family: 'EffraLightRegular';
+	src: url('fonts/effra_std_lt-webfont.eot');
+	src: url('fonts/effra_std_lt-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/effra_std_lt-webfont.woff') format('woff'),
+		 url('fonts/effra_std_lt-webfont.ttf') format('truetype'),
+		 url('fonts/effra_std_lt-webfont.svg#EffraLightRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'EffraRegular';
+	src: url('fonts/effra_std_rg-webfont.eot');
+	src: url('fonts/effra_std_rg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/effra_std_rg-webfont.woff') format('woff'),
+		 url('fonts/effra_std_rg-webfont.ttf') format('truetype'),
+		 url('fonts/effra_std_rg-webfont.svg#EffraRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+* {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+}
+
+ul {
+	list-style: none;
+}
+
+a:link {color:#87c541; text-decoration:none;}
+
+a:visited {color:#87c541; text-decoration:none;}
+
+h1 {
+	color: #555;
+	font: 45px 'EffraLightRegular', 'Helvetica Neue', 'Arial', sans-serif;
+	margin-left: 132px;
+	margin-bottom: 16px;
+}
+
+h2 {
+	color: #555;
+	font: 53px 'EffraLightRegular', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+h3 {
+	color: #8e8e8e;
+	font: 20px 'EffraLightRegular', 'Helvetica Neue', 'Arial', sans-serif;
+	margin-left: 132px;
+	margin-bottom: 2px;
+}
+
+body {
+	//background: url(../Mockup.png) center top;
+	background: url(img/Circles.png) no-repeat center top;
+}
+
+#container {
+	position: relative;
+	width: 960px;
+	margin: auto;
+}
+
+#header {
+	margin-top: 103px;
+}
+
+#main {
+	margin-top: 110px;
+}
+
+#left {
+	float: left;
+	width: 560px;
+}
+
+#right {
+	float: right;
+	width: 330px;
+}
+
+ul.head {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	top: 8px;
+}
+
+ul.head li {
+	float: left;
+}
+
+.avatar {
+	width: 100px;
+	height: 100px;
+	background-image: url(img/Me.png);
+}
+
+.mail {
+	width: 100px;
+	height: 100px;
+	float: right !important;
+	background-image: url(img/Mail.png);
+}
+
+.mail:hover {
+	background-image: url(img/Mail.png);
+}
+
+.mail a {
+	display: block;
+	width: 100px;
+	height: 100px;
+}
+
+.gallery {
+	height: 272px;
+	position: relative;
+	margin-top: 17px;
+	overflow: hidden;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.gallery ul {
+	overflow: hidden !important;
+}
+
+.gallery button {
+	opacity: 0;
+}
+
+.gallery:hover button {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	width: 30px;
+	height: 30px;
+	margin: -15px 0 0;
+	padding: 0;
+	background: #fff;
+	border: 0;
+	overflow: hidden;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	opacity: 1;
+}
+
+.gallery button.prev {
+	left: 20px;
+}
+
+.gallery button.next {
+	right: 20px;
+}
+
+#gprev {
+	background: url(img/Buttons.png) no-repeat left;
+	width: 30px;
+	height: 30px;
+}
+
+#gnext {
+	background: url(img/Buttons.png) no-repeat right;
+	width: 30px;
+	height: 30px;
+}
+
+#gprev:hover, #gnext:hover {
+	opacity: .8;
+}
+
+#gprev:active, #gnext:active {
+	top: 137px;
+}
+
+.gallery button.hide {
+	opacity: 0;
+}
+
+#bio {
+	margin-top: 48px;
+}
+
+#bio h2 {
+	margin-left: -4px;
+}
+
+p {
+	font-family: 'EffraLightRegular', 'Helvetica Neue', 'Arial', sans-serif;
+	font-size: 22px;
+	color: #8e8e8e;
+	margin-top: 18px;
+	line-height: 28px;
+}
+
+p.dwnlds {
+	margin-top: 79px;
+	color: #87c541;
+}
+
+#line {
+	display: block;
+	margin-top: 28px;
+	width: 100%;
+	height: 2px;
+	background-color: #8e8e8e;
+}
+
+p.copyright {
+	font-family: 'EffraLightRegular', 'Helvetica Neue', 'Arial', sans-serif;
+	font-size: 22px;
+	margin-top: 20px;
+	color: #8e8e8e;
+	margin-bottom: 103px;
+}
+
+ul.connect {
+	margin-top: 17px;
+}
+
+ul.connect li {
+	margin-bottom: 30px;
+}
+
+.dribbble, .twitter, .google, .linkedin, .instagram, .rdio {
+	width: 330px;
+	height: 100px;
+	background: no-repeat;
+}
+
+.dribbble a, .twitter a, .google a, .linkedin a, .instagram a, .rdio a {
+	display: block;
+	width: 330px;
+	height: 100px;
+}
+
+.dribbble {
+	background: url(img/Dribbble.png) no-repeat;
+}
+
+.dribbble:hover {
+	background: url(img/Dribbble.png) no-repeat;
+}
+
+.twitter {
+	background: url(img/Twitter.png) no-repeat;
+}
+
+.twitter:hover {
+	background: url(img/Twitter.png) no-repeat;
+}
+
+.google {
+	background: url(img/Google.png) no-repeat;
+}
+
+.google:hover {
+	background: url(img/Google.png) no-repeat;
+}
+
+.linkedin {
+	background: url(img/LinkedIn.png) no-repeat;
+}
+
+.linkedin:hover {
+	background: url(img/LinkedIn.png) no-repeat;
+}
+
+.instagram {
+	background: url(img/Instagram.png) no-repeat;
+}
+
+.instagram:hover {
+	background: url(img/Instagram.png) no-repeat;
+}
+
+.rdio {
+	background: url(img/Rdio.png) no-repeat;
+}
+
+.rdio:hover {
+	background: url(img/Rdio.png) no-repeat;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	body {
+		background: url(img/Circles@2x.png) no-repeat;
+		background-size: 100%;
+	}
+	
+	.avatar {
+		background-image: url(img/Me@2x.png);
+		background-size: 100%;
+	}
+	
+	.mail {
+		background-image: url(img/Mail@2x.png);
+		background-size: 100%;
+	}
+	
+	.mail:hover {
+		background-image: url(img/Mail@2x.png);
+		background-size: 100%;
+	}
+	
+	#gprev {
+		background: url(img/buttons@2x.png) no-repeat left;
+		background-size: 100%;
+	}
+	
+	#gnext {
+		background: url(img/buttons@2x.png) no-repeat right;
+		background-size: 100%;
+	}
+	
+	.dribbble {
+		background: url(img/Dribbble@2x.png);
+		background-size: 100%;
+	}
+	
+	.dribbble:hover {
+		background: url(img/Dribbble@2x.png);
+		background-size: 100%;
+	}
+	
+	.twitter {
+		background: url(img/Twitter@2x.png);
+		background-size: 100%;
+	}
+	
+	.twitter:hover {
+		background: url(img/Twitter@2x.png);
+		background-size: 100%;
+	}
+	
+	.google {
+		background: url(img/Google@2x.png);
+		background-size: 100%;
+	}
+	
+	.google:hover {
+		background: url(img/Google@2x.png);
+		background-size: 100%;
+	}
+	
+	.linkedin {
+		background: url(img/LinkedIn@2x.png);
+		background-size: 100%;
+	}
+	
+	.linkedin:hover {
+		background: url(img/LinkedIn@2x.png);
+		background-size: 100%;
+	}
+	
+	.instagram {
+		background: url(img/Instagram@2x.png);
+		background-size: 100%;
+	}
+	
+	.instagram:hover {
+		background: url(img/Instagram@2x.png);
+		background-size: 100%;
+	}
+	
+	.rdio {
+		background: url(img/Rdio@2x.png);
+		background-size: 100%;
+	}
+	
+	.rdio:hover {
+		background: url(img/Rdio@2x.png);
+	}
+}
