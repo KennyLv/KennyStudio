@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	
+	<!-- <meta http-equiv="Access-Control-Allow-Origin" content="*">-->
+	
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="./assets/css/fontface.css">
 	<link rel="stylesheet" href="./assets/css/style.css">
@@ -131,22 +133,43 @@
 			</div>
 			<div id="panel3" class="panel" style="height: 500px;">
 			
-				Linked In / Github /e-Mail
-				
-				Contact
-				
-				Email
-				
-				See my screct: Share me a secret
+				<div>Linked In </div>
+				<div>Github</div>
+				<div>e-Mail</div>
+				<div>Contact</div>
+				<div>Email</div>
+				<div><a href="message.html" target="_blank">Send me a secret</a></div>
+				 <div><a href="blog.html" target="_blank">View my favirote</a></div>
 			
 			</div>
 	</div>
 	<div id="footer" class="wrapper" style="height: 100px;background-color:black;">
 		Copyright © 2011 Kenny Lv
 	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+				var base_url = "http://10.20.71.62:8056/KennyStudio/server/";
+				$.ajax({
+					url: base_url + "test.php",
+					type: "GET",
+					async: false,
+					data: {username:$("#username").val(), content:$("#content").val()},
+					dataType: "json",
+					error:function(e){
+							console.log("ERROR");
+							console.log(e.responseText);
+					},
+					success: function(data){
+							console.log("SUCCEED");
+							console.log(data);
+					}
+				});
+		});
+	</script>
+	
 </div>
 </body>
-
 
 
 
