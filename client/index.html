@@ -16,6 +16,7 @@
 	
 	<script type="text/javascript" src="./assets/js/3rd-jQuery/jquery-1.11.1.min.js"></script>	
 	<script type="text/javascript" src="./assets/js/3rd-jQueryPlugin/jquery.waypoints-2.0.5.js"></script>	
+	<script type="text/javascript" src="./assets/js/common.js"></script>	
 	<script type="text/javascript">
 		/*$(document).ready(function() {
 			$('.main-nav li:first a').addClass('selected');
@@ -146,28 +147,6 @@
 	<div id="footer" class="wrapper" style="height: 100px;background-color:black;">
 		Copyright © 2011 Kenny Lv
 	</div>
-	
-	<script type="text/javascript">
-		$(document).ready(function() {
-				var base_url = "http://10.20.71.62:8056/KennyStudio/server/";
-				$.ajax({
-					url: base_url + "profile/education",
-					type: "GET",
-					async: false,
-					data: {username:$("#username").val(), content:$("#content").val()},
-					dataType: "json",
-					error:function(e){
-							console.log("ERROR");
-							console.log(e.responseText);
-					},
-					success: function(data){
-							console.log("SUCCEED");
-							console.log(data);
-					}
-				});
-		});
-	</script>
-	
 </div>
 </body>
 

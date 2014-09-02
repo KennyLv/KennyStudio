@@ -47,8 +47,45 @@
 		
 		<script type="text/javascript" src="./assets/js/3rd-jsMVC/agility.min.js"></script>
 		
+		<script type="text/javascript" src="./assets/js/common.js"></script>
+		
+	<script type="text/javascript">
+		$(document).ready(function() {
+				/*
+				var base_url = "http://10.20.71.62:8056/KennyStudio/server/";
+				$.ajax({
+					url: base_url + "profile/education",
+					type: "GET",
+					async: false,
+					data: {username:$("#username").val(), content:$("#content").val()},
+					dataType: "json",
+					error:function(e){
+							console.log("ERROR");
+							console.log(e.responseText);
+					},
+					success: function(data){
+							console.log("SUCCEED");
+							console.log(data.Message.content);
+					}
+				});
+				*/
+		});
+	</script>
+		
+		
+		
 		<script type="text/javascript" >
 			$(document).ready(function() {
+				var baseCommon = new BaseTool();
+				var basePara = {
+					url: "profile/educatiowwwn",
+					type: "GET",
+					async: false,
+					data: null,
+					dataType: "json",
+					error:function(e){console.log(e.responseText)}
+				}
+				
 				var myQuotes= {
 				"EN":[
 					"A good beginning is half done.",
@@ -83,12 +120,7 @@
 				}
 				playNextString();
 				
-				var employmentInfo_model=[
-					{"yearFrom": "2001.8~2009.9", "yearTo":"8888.8~9999.9","companyName":"Infoition","jobTitle":"Product Marketing Manager","description":"Planning and development included market research, competitor analysis, pricing strategies, messaging, prod"},
-					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["1","2","3","4"]},
-					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]},
-					{"yearFrom": "", "yearTo":"","companyName":"","jobTitle":"","description":["","","",""]}
-				];
+
 				var employmentInfo_view = $$({}, 
 						'<div class="employment_period">'
 					+ '<img class="pointer" src="./assets/images/pointer.png"/>'
@@ -104,25 +136,6 @@
 					+ '</div>'
 					+ '</div>'
 				);
-				for(var index=0;index<employmentInfo_model.length;index++){
-					var employmentInfo_html = $$(employmentInfo_view, employmentInfo_model[index]);
-					$("#sections_employment").append(employmentInfo_html.view.$root);
-				}
-				
-				var educationInfo_model=[	{
-					"yearFrom": "2004-2008", 
-					"yearTo":"2008",
-					"major":"Statistics",
-					"school":"School of Finance and Economics",
-					"university":"University of Jiangsu"
-				},
-				{
-					"yearFrom": "2008-2010", 
-					"yearTo":"2010",
-					"major":"Marketing & Advertising - B.A.",
-					"school":"School of Communications",
-					"university":"University of Central Florida"
-				}];
 				var educationInfo_view =  $$({}, 
 					'<div class="education_period">'
 					+'<img class="pointer" src="./assets/images/pointer.png"/>'
@@ -137,9 +150,29 @@
 					+'</div>'
 					+'</div>'
 				);
-				var educationInfo_html = $$(educationInfo_view, educationInfo_model[1]);
-				$("#sections_eduction").append(educationInfo_html.view.$root);
+				var getEmploymentInfoSucceed = function (data){
+						var employmentInfo_model= data.content;
+						for(var index=0;index<employmentInfo_model.length;index++){
+							var employmentInfo_html = $$(employmentInfo_view, employmentInfo_model[index]);
+							$("#sections_employment").append(employmentInfo_html.view.$root);
+						}
+				}
+				var employmentInfoPara = $.extend(true, basePara, {
+					url: "profile/employ",
+					success:getEmploymentInfoSucceed
+				});
+				baseCommon.ajax(employmentInfoPara);
 				
+				baseCommon.ajax($.extend(true, basePara, {
+					url: "profile/education",
+					success:function(data){
+						var educationInfo_model = data.content;
+						for(var index=0;index<educationInfo_model.length;index++){
+							var educationInfo_html = $$(educationInfo_view, educationInfo_model[index]);
+							$("#sections_eduction").append(educationInfo_html.view.$root);
+						}
+					}
+				}));
 				
 				var professionalSkills_model=[
 					{"skills": "Digital Marketing",     "proficiency":"6"},
@@ -172,15 +205,10 @@
 				}
 				
 				var highlights_model = [
-					"Experience creating the product positioning, messaging and branding necessary to capture a target markets attention and successfully go-to-market.",
 					"Experience creating sales and marketing collateral; white papers, data sheets, case studies, sales presentations, power points, brochures, trade-show materials, e-mail templates, webinars, and more.",
 					"Experience developing and executing wide range of digital strategies; web design, social media, e-mail, SEO, mobile, video, and more.",
-					"Worked closely with channel partners and trade organizations to develop channel partner strategies.",
 					"Developed and led numerous webinars and trade shows to create market demand and spur lead gen.",
-					"Proven ability to collaborate across departments to successfully bring products to market.",
-					"Agency career experience has proven I can work in complex, fast paced environments without sacrificing ability to multi-task and pay attention to detail.",
-					"Proven PM skills; from creating project plans to managing resources I’ve consistently met deadlines and business objectives on or under budget.",
-					"Passion for keeping up with emerging technology and the latest traditional/digital marketing trends."
+					"Perfect."
 				];
 				var item_view = $$({}, '<li data-bind="item"></li>');
 				for(var index=0; index<highlights_model.length;index++){

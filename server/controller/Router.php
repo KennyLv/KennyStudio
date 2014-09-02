@@ -2,9 +2,9 @@
     class Router {
         // 路由表
         private $routers = array(
-            array("name"=>"userlist", "pattern"=>"get /profile", "action"=>"Profile#get"),
-            array("name"=>"userinfo", "pattern"=>"get /profile/:s", "action"=>"Profile#getById")/*,
-            array("name"=>"useradd", "pattern"=>"post /user", "action"=>"User#add"),
+            array("name"=>"userinfo", "pattern"=>"get /profile/:s", "action"=>"Profile#getProfile"),
+            array("name"=>"useradd", "pattern"=>"get /works/:num", "action"=>"Works#getWorks"),
+            array("name"=>"useradd", "pattern"=>"get /work/:id", "action"=>"Works#getWorkDetail")/*,
             array("name"=>"userupdate", "pattern"=>"update /user", "action"=>"User#update"),
             array("name"=>"userdel", "pattern"=>"delete /user/:id", "action"=>"User#delete")*/
         );
@@ -28,13 +28,12 @@
                     if ($params != null) {
                         array_shift($params);
                         $action = $router["action"];
-						
                         // 寻找到第一个匹配的路由即执行，然后返回
                         return $this->invoke($action, $params);
                     }
                 }
             }
-            echo "404";
+			echo "404 : Actions not Found!";
             // error 404
         }
         private function invoke($action, $params) {
