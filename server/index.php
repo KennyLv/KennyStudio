@@ -1,16 +1,10 @@
 <?php
 //允许跨域访问
 header("Access-Control-Allow-Origin: *");
-require_once('restfulRequestRouter.php');
-
+//导向URL路由
+require_once('controller/Router.php');
 
 $r = new Router;
 $r->dispatch();
-/*
-$response = array(); 
-$response["error"] = true;
-$response["message"] = "Oops! An error occurred while loading";
 
-echo json_encode($response);
-*/
 ?>

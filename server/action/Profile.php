@@ -1,8 +1,6 @@
 <?php
 
-require_once('restfulRequestRouter.php');
-
-    class User {
+    class Profile {
 		private $id;  
 		private $name;  
 		
@@ -16,7 +14,7 @@ require_once('restfulRequestRouter.php');
         }
 		
         public function getById($id) {
-            echo "getById";
+            echo "{action:getById}";
         }
 		
         public function add() {

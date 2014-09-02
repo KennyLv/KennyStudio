@@ -2,33 +2,28 @@
     class Router {
         // 路由表
         private $routers = array(
-            array("name"=>"userlist", "pattern"=>"get /user", "action"=>"User#get"),
-            array("name"=>"userinfo", "pattern"=>"get /user/:s", "action"=>"User#getById"),
+            array("name"=>"userlist", "pattern"=>"get /profile", "action"=>"Profile#get"),
+            array("name"=>"userinfo", "pattern"=>"get /profile/:s", "action"=>"Profile#getById")/*,
             array("name"=>"useradd", "pattern"=>"post /user", "action"=>"User#add"),
             array("name"=>"userupdate", "pattern"=>"update /user", "action"=>"User#update"),
-            array("name"=>"userdel", "pattern"=>"delete /user/:id", "action"=>"User#delete")
+            array("name"=>"userdel", "pattern"=>"delete /user/:id", "action"=>"User#delete")*/
         );
         // 入口
         public function dispatch() {
             $url = $_SERVER["REQUEST_URI"];
             $method = $_SERVER["REQUEST_METHOD"];
 			
-			echo $method."<br/>";
-			echo $url."<br/><br/>";
+			//echo $method."<br/>";
+			//echo $url."<br/><br/>";
 			
             foreach ($this->routers as $router) {
                 $pattern = $router["pattern"];
-                $pats = explode(" ", $pattern);
-				
-				echo $pats[0]."==<br/>";
+                $pats = explode(" ", $pattern);		//echo $pats[0]."==<br/>";
 				
                 if (strcasecmp($pats[0], $method) == 0) {
                     // 是否与当前路由匹配
-					
-					echo  $router["pattern"]."<br/>";
-					
+					//echo  $router["pattern"]."<br/>";
                     $params = $this->checkUrl($method, strtolower($url), strtolower($pats[1]));
-					
 					
                     if ($params != null) {
                         array_shift($params);
@@ -39,16 +34,20 @@
                     }
                 }
             }
-            echo "404 error";
+            echo "404";
             // error 404
         }
         private function invoke($action, $params) {
             $acts = explode("#", $action);
-            $className = $acts[0]."Action";
+            $className = $acts[0];
             $methodName = $acts[1];
-            $actionDir = dirname(__FILE__).DIRECTORY_SEPARATOR."action";
+            $actionDir = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."action";
             // 载入action文件
             $classFile = $actionDir.DIRECTORY_SEPARATOR.$className.".php";
+			
+			//echo $actionDir;
+			//echo $classFile;
+			
             if (! file_exists($classFile)) {
                 // 404 error
                 echo "404 error, no action found";
@@ -70,7 +69,7 @@
         }
         // 正则匹配检查，并提取出参数
         private function checkUrl($method, $url, $pattern) {
-            echo "check url [ $url  ]with pattern [ $pattern ]<br/><br/><br/>";
+            //echo "check url [ $url  ]with pattern [ $pattern ]<br/><br/><br/>";
             $ma = array();
             $pattern = ltrim(rtrim($pattern, "/"));
             $pattern = "/".str_replace("/", "\/", $pattern)."\/?$/";
@@ -83,9 +82,5 @@
             return null;
         }
     }
-	
-	
-	$r = new Router;
-	$r->dispatch();
 	
 ?>
