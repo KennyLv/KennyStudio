@@ -40,7 +40,7 @@
             $acts = explode("#", $action);
             $className = $acts[0];
             $methodName = $acts[1];
-            $actionDir = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."action";
+            $actionDir = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."models";
             // ÔØÈëactionÎÄ¼þ
             $classFile = $actionDir.DIRECTORY_SEPARATOR.$className.".php";
 			
