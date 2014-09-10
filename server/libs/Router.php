@@ -4,7 +4,8 @@
         private $routers = array(
             array("name"=>"userinfo", "pattern"=>"get /profile/:s", "action"=>"Profile#getProfile"),
             array("name"=>"useradd", "pattern"=>"get /works/:num", "action"=>"Works#getWorks"),
-            array("name"=>"useradd", "pattern"=>"get /work/:id", "action"=>"Works#getWorkDetail")/*,
+            array("name"=>"useradd", "pattern"=>"get /work/:id", "action"=>"Works#getWorkDetail"),
+            array("name"=>"translate", "pattern"=>"post /baidutranslate/", "action"=>"BaiduTranslater#translate")/*,
             array("name"=>"userupdate", "pattern"=>"update /user", "action"=>"User#update"),
             array("name"=>"userdel", "pattern"=>"delete /user/:id", "action"=>"User#delete")*/
         );
@@ -13,24 +14,27 @@
             $url = $_SERVER["REQUEST_URI"];
             $method = $_SERVER["REQUEST_METHOD"];
 			
-			//echo $method."<br/>";
-			//echo $url."<br/><br/>";
-			
             foreach ($this->routers as $router) {
                 $pattern = $router["pattern"];
                 $pats = explode(" ", $pattern);		//echo $pats[0]."==<br/>";
 				
+				// 是否与当前路由匹配
                 if (strcasecmp($pats[0], $method) == 0) {
-                    // 是否与当前路由匹配
-					//echo  $router["pattern"]."<br/>";
-                    $params = $this->checkUrl($method, strtolower($url), strtolower($pats[1]));
-					
-                    if ($params != null) {
-                        array_shift($params);
-                        $action = $router["action"];
-                        // 寻找到第一个匹配的路由即执行，然后返回
-                        return $this->invoke($action, $params);
-                    }
+					if( $method == "POST"){
+						$params = $_POST;						
+						if ($params != null) {
+							$action = $router["action"];
+							return $this->invoke($action, $params);
+						}
+					}else{
+						$params = $this->checkUrl($method, strtolower($url), strtolower($pats[1]));					
+						if ($params != null) {
+							array_shift($params);
+							$action = $router["action"];
+							// 寻找到第一个匹配的路由即执行，然后返回
+							return $this->invoke($action, $params);
+						}
+					}
                 }
             }
 			echo "404 : Actions not Found!";
@@ -62,7 +66,7 @@
                 } else {
                     $instance = $rc->newInstance();
                     $method = $rc->getMethod($methodName);
-                    $method->invokeArgs($instance, $params);
+					$method->invokeArgs($instance, $params);
                 }
             }
         }
