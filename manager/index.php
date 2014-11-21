@@ -29,7 +29,8 @@
 	<div>
 			<input name="submit_button" type="button" value="Reset" onclick="resetAll()"></input>
 			<input name="submit_button" type="button" value="Submit" onclick="reviewHtml()"></input>
-			<input name="translate_button" type="button" value="Translate" onclick="transHtml()"></input>
+			<input name="translate_button_1" type="button" value="TranslateZh2En" onclick="transHtml('zh','en')"></input>
+			<input name="translate_button_2" type="button" value="TranslateEn2Zh" onclick="transHtml('en','zh')"></input>
 			<br/><br/>
 	</div>
 	<div class="clear"></div>
@@ -51,13 +52,13 @@
 			document.getElementById("editor_result_div").innerHTML = um.getAllHtml();
 	}
 	
-	function transHtml(){
+	function transHtml(f,t){
 		if(um.hasContents()){
 			var queryTxt = um.getPlainTxt();
 			$.ajax({
 				url: "http://localhost:8056/KennyStudio/server/baidutranslate",
 				type: "POST",
-				data: {"from":"zh","to":"en","q":queryTxt},
+				data: {"from":f,"to":t,"q":queryTxt},
 				dataType: "json",
 				error:function(e){
 						console.log("ERROR");

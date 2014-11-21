@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"and","comments":{"zero":"0 Comments","multiple":"{num} Comments","one":"1 Comment"}},"counts":[{"id":"http:\/\/ng-learn.org\/2013\/11\/AngularJS_Workshop_From_Zero_To_Ninja_Jr_Part_2\/","comments":0},{"id":"http:\/\/ng-learn.org\/2013\/12\/AngularJS_Workshop_From_Zero_To_Ninja_Jr_Part4\/","comments":0},{"id":"http:\/\/ng-learn.org\/2013\/12\/AngularJS_Workshop_From_Zero_To_Ninja_Jr_Part3\/","comments":0},{"id":"http:\/\/ng-learn.org\/2013\/11\/AngularJS_Workshop_From_Zero_To_Ninja_Turtle_Jr\/","comments":3},{"id":"http:\/\/ng-learn.org\/2014\/01\/AngularJS_Workshop_From_Zero_To_Ninja_Jr_Part6\/","comments":0},{"id":"http:\/\/ng-learn.org\/2014\/01\/AngularJS_Workshop_From_Zero_To_Ninja_Jr_Part5\/","comments":0}]});
+}
